@@ -1,14 +1,17 @@
 'use client'
 
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import React, { use } from 'react';
 
 const HomeBanner = () => {
 
+    const route = useRouter();
+
     const btnHandler = () =>{
         const password =  prompt("Enter your Password");
         if(password == '1234'){
-            redirect("/dashboard");
+            // redirect("/dashboard");
+            route.push("/dashboard");
         }
 
     }
