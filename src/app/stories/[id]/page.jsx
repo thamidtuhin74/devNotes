@@ -1,9 +1,10 @@
-import PageTitle from '@/components/PageTitle';
-import StoryCard from '@/components/StoryCard';
+import SingleStoryDetails from '@/components/SingleStoryDetails';
 import React from 'react';
 
-const Stories = () => {
+const StoryDetailsPage = async ({params}) => {
 
+    const {id} = await params;
+    console.log(id);
     const devStories = [
         {
             "id": 1,
@@ -62,18 +63,19 @@ const Stories = () => {
         }
     ]
 
+    const story = devStories.find((story) => story.id == id);
+
+    if(!story){
+        return <div>
+            <h2>Story not Funded</h2>
+        </div>
+    }
+
     return (
         <div>
-            <PageTitle>Welcome to Story Page</PageTitle>
-            <div className='mt-5'>
-                {devStories.map((story)=>(
-                    <StoryCard key={story.id} story={story}>
-
-                    </StoryCard>
-                ))}
-            </div>
+            <SingleStoryDetails story={story}></SingleStoryDetails>
         </div>
     );
 };
 
-export default Stories;
+export default StoryDetailsPage;
