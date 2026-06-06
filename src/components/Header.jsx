@@ -11,7 +11,7 @@ const Header = () => {
                 <Link href="/about">About</Link>
                 <Link href="/about/contact">Contact</Link>
                 <Link href="/about/team">Teams</Link>
-                <Link href="/dashboard" className='btn rounded-full bg-amber-300 py-5 px-12'>Create Story</Link>
+                <Link href="/dashboard/add-story" className='btn rounded-full bg-amber-300 py-5 px-12'>Create Story</Link>
             </nav>
         </header>
     );
