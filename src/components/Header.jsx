@@ -1,7 +1,13 @@
+"use client"
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Header = () => {
+    const path = usePathname();
+    console.log(path);
+    if(path.startsWith("/dashboard")) return <></>
     return (
         <header className="border-b-0 border-gray flex justify-between px-22 py-5 pt-6">
             <Link className="text-lg font-semibold" href="/">🤑 Dev Story</Link>
